@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+import Music from './Music';
+import { Route,Routes } from 'react-router-dom';
+import Onemusic from './Onemusic';
+
 
 function App() {
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+  <Routes>
+    <Route path='/' element={<Music/>}/>
+    <Route path='/:id' element={<Onemusic/>}/>
+  </Routes>
+  </>
   );
 }
 
